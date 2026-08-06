@@ -1,0 +1,4 @@
+requests
+portalocker
+functions-framework
+python-dotenv

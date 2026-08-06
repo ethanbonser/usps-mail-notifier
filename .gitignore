@@ -1,0 +1,9 @@
+.env
+.env.yaml
+__pycache__/
+*.log
+session_history.pkl
+bot.lock
+saved_mail/
+venv/
+.venv/
