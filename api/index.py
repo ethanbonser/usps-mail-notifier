@@ -108,13 +108,13 @@ def run_mail_check(chat_id):
     except Exception as e:
         return f"❌ <b>Error connecting to Gmail:</b> {str(e)}"
 
-@app.route("/", methods=["GET"])
-def health_check():
-    return "USPS Mail Notifier 24/7 Webhook API is Live!", 200
-
-@app.route("/webhook", methods=["POST"])
-@app.route("/api/index", methods=["POST"])
+@app.route("/", methods=["GET", "POST"])
+@app.route("/webhook", methods=["GET", "POST"])
+@app.route("/api/index", methods=["GET", "POST"])
 def webhook():
+    if request.method == "GET":
+        return "USPS Mail Notifier 24/7 Webhook API is Live!", 200
+
     update = request.get_json(force=True, silent=True) or {}
     
     if "callback_query" in update:
