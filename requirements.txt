@@ -2,3 +2,5 @@ requests
 portalocker
 functions-framework
 python-dotenv
+flask
+gunicorn
